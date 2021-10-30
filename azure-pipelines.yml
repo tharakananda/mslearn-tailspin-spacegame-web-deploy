@@ -2,6 +2,9 @@ trigger:
 - '*'
 variables:
   buildConfiguration: 'Release'
+  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+  dotnetSdkVersion: '5.x'
+
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
@@ -12,11 +15,7 @@ jobs:
   vmImage: 'ubuntu-20.04'
   demands:
   - npm
-
-variables:
-  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '5.x'
- 
+   
 steps:
  - task: UseDotNet@2
    displayName: 'Use .NET SDK $(dotnetSdkVersion)'
