@@ -70,12 +70,7 @@ stages:
 - stage: 'Dev'
   displayName: 'Deploy the wDev Environment'
   dependsOn: Build
-  condition:
-  and
-  (
-  succeeded(),
-  eq(variables['Build.SourceBranchName'], variables['releaseBranchName'])
-  )
+  condition: and (succeeded(),eq(variables['Build.SourceBranchName'], variables['releaseBranchName']))
   jobs:
   - deployment: Deploy
     pool:
