@@ -8,14 +8,13 @@ variables:
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  jobs: 
+  jobs:
   - job: 'Build'
     displayName: 'Build job'
     pool:
       vmImage: 'ubuntu-20.04'
       demands:
-      - npm
-
+        - npm
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
