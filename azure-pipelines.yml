@@ -15,11 +15,11 @@ jobs:
   vmImage: 'ubuntu-20.04'
   demands:
   - npm
-   
+
 steps:
- - task: UseDotNet@2
-   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
-   inputs:
+- task: UseDotNet@2
+  displayName: 'Use .NET SDK $(dotnetSdkVersion)'
+  inputs:
     version: '$(dotnetSdkVersion)'
  
 - task: Npm@1
