@@ -75,7 +75,7 @@ stages:
         strategy:
           runOnce:
           deploy:
-      steps:
+  steps:
       - download: current
         artifact: drop
       - task: AzureWebApp@1
